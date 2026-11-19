@@ -73,7 +73,7 @@ const drawer=document.getElementById('mobileDrawer'),drawerTrigger=document.getE
 let drawerReturnFocus=null;
 function setDrawer(open,returnFocus=true){
   if(open){drawerReturnFocus=document.activeElement; drawer.inert=false; drawer.setAttribute('aria-hidden','false'); drawer.classList.add('is-open'); drawerBackdrop.classList.add('is-visible'); document.body.classList.add('drawer-open'); drawerTrigger.setAttribute('aria-expanded','true');drawerClose.focus();}
-  else {drawer.classList.remove('is-open');drawerBackdrop.classList.remove('is-visible');document.body.classList.remove('drawer-open');drawerTrigger.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');drawer.inert=true;if(returnFocus && drawerReturnFocus?.focus)drawerReturnFocus.focus();}
+  else {drawer.classList.remove('is-open');drawerBackdrop.classList.remove('is-visible');document.body.classList.remove('drawer-open');drawerTrigger.setAttribute('aria-expanded','false');if(returnFocus && drawerReturnFocus?.focus)drawerReturnFocus.focus();else drawerTrigger.focus();drawer.setAttribute('aria-hidden','true');drawer.inert=true;}
 }
 drawerTrigger.addEventListener('click',()=>setDrawer(true));
 drawerClose.addEventListener('click',()=>setDrawer(false));
