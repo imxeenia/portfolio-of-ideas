@@ -10,4 +10,20 @@ function goProject(id){const p=projects[id];if(!p)return;const ids={detailKicker
 function goAbout(){document.getElementById('home').classList.remove('active');document.getElementById('detail').classList.remove('active');document.getElementById('aboutPage').classList.add('active');history.replaceState(null,'','#about-me');window.scrollTo({top:0,behavior:'smooth'})}
 window.addEventListener('popstate',()=>{const h=location.hash;if(h.startsWith('#project-'))goProject(h.slice(9));else if(h==='#about-me')goAbout();else goHome(h==='#little-stories'?'little-stories':h==='#work'?'work':'')});
 document.querySelectorAll('[data-project]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goProject(a.dataset.project)}));document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();a.dataset.go==='about'?goAbout():goHome(a.dataset.scroll||'')}));
-document.querySelectorAll('.mobile-dropdown a, .site-header .brand').forEach(a=>a.addEventListener('click',()=>{const menu=document.querySelector('.mobile-menu');if(menu)menu.open=false}));document.getElementById('backTop').onclick=()=>goHome('work');document.getElementById('backBottom').onclick=()=>goHome('work');if(location.hash.startsWith('#project-'))goProject(location.hash.replace('#project-',''));else if(location.hash==='#about-me')goAbout();else if(['#work','#little-stories'].includes(location.hash))goHome(location.hash.slice(1));
+const drawer=document.getElementById('mobileDrawer'),drawerTrigger=document.getElementById('drawerTrigger'),drawerClose=document.getElementById('drawerClose'),drawerBackdrop=document.getElementById('drawerBackdrop');
+let drawerReturnFocus=null;
+function setDrawer(open,returnFocus=true){
+  if(open){drawerReturnFocus=document.activeElement; drawer.inert=false; drawer.setAttribute('aria-hidden','false'); drawer.classList.add('is-open'); drawerBackdrop.classList.add('is-visible'); document.body.classList.add('drawer-open'); drawerTrigger.setAttribute('aria-expanded','true');drawerClose.focus();}
+  else {drawer.classList.remove('is-open');drawerBackdrop.classList.remove('is-visible');document.body.classList.remove('drawer-open');drawerTrigger.setAttribute('aria-expanded','false');if(returnFocus && drawerReturnFocus?.focus)drawerReturnFocus.focus();else drawerTrigger.focus();drawer.setAttribute('aria-hidden','true');drawer.inert=true;}
+}
+drawerTrigger.addEventListener('click',()=>setDrawer(true));
+drawerClose.addEventListener('click',()=>setDrawer(false));
+drawerBackdrop.addEventListener('click',()=>setDrawer(false));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setDrawer(false,false)));
+document.addEventListener('keydown',e=>{
+ if(!drawer.classList.contains('is-open'))return;
+ if(e.key==='Escape'){e.preventDefault();setDrawer(false);return;}
+ if(e.key==='Tab'){const focusables=[...drawer.querySelectorAll('a,button')];const first=focusables[0],last=focusables[focusables.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
+});
+window.addEventListener('resize',()=>{if(window.innerWidth>800&&drawer.classList.contains('is-open'))setDrawer(false,false)});
+document.getElementById('backTop').onclick=()=>goHome('work');document.getElementById('backBottom').onclick=()=>goHome('work');if(location.hash.startsWith('#project-'))goProject(location.hash.replace('#project-',''));else if(location.hash==='#about-me')goAbout();else if(['#work','#little-stories'].includes(location.hash))goHome(location.hash.slice(1));
