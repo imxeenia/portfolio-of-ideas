@@ -413,3 +413,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
 @media(prefers-reduced-motion:reduce) {
   .site-drawer,.drawer-backdrop { transition:none; }
 }
+
+/* v1.6 — brand wordmark: highlight "of", no trailing green dot. */
+.site-header .brand, .site-drawer .drawer-brand { white-space:nowrap; }
+.site-header .brand-of, .site-drawer .brand-of {
+  color: #8aa140;
+  font: inherit;
+}
