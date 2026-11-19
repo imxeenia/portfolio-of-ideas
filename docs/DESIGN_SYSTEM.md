@@ -190,3 +190,11 @@
 
 ## 18. About Me — uploaded assets (20.11.2026)
 User uploaded 10 original JPEG photos to `assets/about/`. The gallery uses 6 exact filenames without renaming: `IMG_7926.jpeg` (featured close-up), `IMG_4252.jpeg` (forest), `IMG_3759.jpeg` (café), `IMG_7881.jpeg` (meadow), `IMG_3072.jpeg` (sunset), `IMG_9922.jpeg` (mountains). Four other uploaded photos remain unused. Prior WebP filenames in section 17 were planned placeholders, **not published assets**. The gallery now points to originals; optional compression can be done later to improve mobile performance while preserving original details. Do not display the remaining 4 by default without confirmation.
+
+## 19. About Me — scattered memories v1.9 (20.11.2026)
+По просьбе пользователя прежняя общая фотогалерея **отменена**. Шесть фотографий размещаются маленькими декоративными акцентами по всей высоте страницы, а не одной группой. Распределение: вступление — IMG_7926; Who I Am — IMG_4252; Education — IMG_3759; Experience — IMG_7881 и IMG_3072; Toolkit — IMG_9922.
+- Стили: editorial collage, часть фотографий — лёгкие полароиды, часть — свободная фотобумага, часть — рваный край; мягкая тень, повороты около 3–5°. Цвета и лица не менять.
+- Размеры: desktop обычно ~112–168px, mobile ~88–120px; не делать огромных фотографий или общей сетки.
+- Не перекрывать смысловые тексты и кнопки; на телефоне фото располагаются рядом с заголовками или после соответствующего содержательного блока, не абсолютным позиционированием поверх текста.
+- Исходные JPEG остаются неизменными, изменения только HTML/CSS. Проверка живой мобильной версии после деплоя обязательна.
+- Откат: предыдущая галерея сохраняется в GitHub-истории до коммита `f90b9dc947cf3bfefc70758ea5281840cbefd6b7`.
