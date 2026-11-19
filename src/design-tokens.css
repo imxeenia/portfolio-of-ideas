@@ -113,3 +113,60 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
   .project:hover .visual, .button:hover { transform: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* v1.1 — Projects, Little Stories, About Me. Reuse tokens above. */
+.little-section { border-top: 1.5px solid var(--line, #242820); }
+.little-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--card-gap); }
+.little-card { display: block; min-width: 0; }
+.little-art { aspect-ratio: 4 / 5; position: relative; overflow: hidden; border: 1.5px solid var(--line, #242820); border-radius: var(--radius, 22px); padding: var(--card-padding); display: flex; justify-content: flex-end; flex-direction: column; transition: transform .2s; }
+.little-card:hover .little-art { transform: translateY(-4px); }
+.little-art > span { position:absolute; top: var(--space-6); left: var(--space-6); background: var(--white, #fffefa); color: var(--ink, #20251e); padding: var(--space-2) var(--space-3); border-radius: 20px; font: 700 var(--type-caption) var(--font-ui); z-index: 2; }
+.little-art > strong { font: 800 clamp(1.75rem, 3.7vw, 4.4rem)/.99 var(--font-display); letter-spacing: -.075em; position: relative; z-index: 1; overflow-wrap: anywhere; }
+.little-art > i { position:absolute; top: 18%; right: 5%; font: normal 800 clamp(5rem, 15vw, 11rem)/1 var(--font-display); opacity: .35; }
+.little-baltic { background: #b3cdd6; color:#253d4b; }
+.little-home { background:#e8c9a7; color:#5c4232; }
+.little-march { background:#d8e9c8; color:#36543f; }
+.little-card h3 { font: 700 var(--type-card-title)/1.25 var(--font-ui); letter-spacing: -.04em; margin: var(--space-4) 0 var(--space-1); }
+.little-card p { font-size: var(--type-caption); line-height: 1.5; color:var(--sub,#65695d); margin:0; }
+.about-page-head { padding: var(--section-pad-block) 0; border-bottom: 1.5px solid var(--ink,#20251e); }
+.about-page-head h1 { font:800 var(--type-page)/1.06 var(--font-display); letter-spacing:-.07em; margin:var(--space-8) 0; overflow-wrap:break-word; }
+.about-page-head h1 span { color: #8aa140; }
+.about-intro { max-width:55ch; font-size:var(--type-lead); line-height:1.6; }
+.about-columns { display:grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap:var(--space-12); border-bottom:1px solid var(--ink,#20251e); padding:var(--subsection-gap) 0; }
+.about-side h2 { font:800 var(--type-section)/1.13 var(--font-display); letter-spacing:-.065em; margin:var(--space-8) 0 0; }
+.about-text p { font-size:var(--type-body); line-height:1.65; max-width:65ch; margin: 0 0 var(--space-4); }
+.about-text .timeline-item { margin-bottom:var(--space-8); }
+.about-text .meta { align-items:baseline; }
+.about-text .meta strong { text-align:right; }
+.about-text .timeline-item p { margin-top:var(--space-4); }
+.about-text .skills { margin:0 0 var(--space-8); }
+.about-text .about-note { color:var(--sub,#65695d); font-size:var(--type-caption); }
+.about-action { padding:var(--space-16) 0 var(--section-pad-block); }
+@media (max-width: 900px) {
+ .little-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+ .about-columns { gap:var(--space-8); }
+ .navlinks { gap:var(--space-4); }
+}
+@media (max-width: 619px) {
+ .navlinks { gap:var(--space-2); }
+ .navlinks a { font-size: .6875rem; letter-spacing:0; }
+ .little-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-4); }
+ .little-art { border-radius:14px; }
+ .little-art > span { top:var(--space-3); left:var(--space-3); font-size:.625rem; }
+ .little-art > strong { font-size:clamp(1.4rem,5.8vw,2.2rem); }
+ .little-art > i { font-size:5rem; }
+ .little-card h3 { font-size:var(--type-body); }
+ .little-card p { font-size:.75rem; }
+ .about-columns { grid-template-columns:1fr; gap:var(--space-6); }
+ .about-page-head h1 { font-size:var(--type-page); }
+ .about-text .meta { flex-wrap:wrap; }
+ .about-text .meta strong { text-align:left; }
+}
+@media (max-width: 360px) {
+ .nav { gap:var(--space-2); }
+ .brand { font-size:1.05rem; white-space:nowrap; }
+ .navlinks a { font-size:.625rem; }
+ .little-grid { grid-template-columns:1fr; }
+ .little-art { aspect-ratio: 5 / 4; }
+}
+@media (prefers-reduced-motion: reduce) { .little-art { transition:none; } .little-card:hover .little-art { transform:none; } }
