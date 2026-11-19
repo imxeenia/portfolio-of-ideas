@@ -490,3 +490,33 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
  .about-gallery .about-photo-feature { grid-column:span 2; grid-row:span 1; aspect-ratio:4/3; }
  .about-gallery .about-photo-feature img { object-position:center 42%; }
 }
+
+/* v1.9 — scattered small memory photos throughout About Me. */
+.about-hero-memory { position:relative; height:clamp(8.5rem,14vw,11rem); margin-top:var(--space-6); }
+.memory-photo { display:block;position:relative;width:clamp(7.5rem,11vw,10.5rem);aspect-ratio:4/5;margin:0;z-index:1;transform:rotate(var(--memory-rotation,0deg)); }
+.memory-photo img { display:block;width:100%;height:100%;object-fit:cover;object-position:center; }
+.memory-polaroid { padding:clamp(.3rem,.55vw,.5rem);padding-bottom:clamp(.75rem,1.15vw,1rem);background:var(--white);box-shadow:0 6px 20px rgba(32,37,30,.12); }
+.memory-paper { border-radius:2px 8px 3px 6px;overflow:hidden;box-shadow:0 6px 18px rgba(32,37,30,.14); }
+.memory-torn { padding:.25rem;background:var(--white);clip-path:polygon(0% 2%,9% 1%,15% 2%,25% 0%,35% 2%,46% 0%,55% 2%,65% 0%,75% 2%,85% 0%,95% 2%,100% 1%,99% 11%,100% 22%,98% 35%,100% 46%,98% 56%,100% 68%,99% 79%,100% 90%,98% 99%,89% 98%,78% 100%,67% 98%,56% 100%,45% 98%,34% 100%,23% 98%,12% 100%,2% 98%,1% 88%,2% 76%,0% 64%,2% 52%,0% 39%,2% 25%); }
+.about-hero-memory .memory-hero { --memory-rotation:-5deg;position:absolute;left:min(5%,1.5rem);top:0;width:clamp(8rem,12vw,11rem); }
+.about-columns .about-side,.about-columns .about-text { min-width:0; }
+.about-columns .about-side .memory-photo,.about-columns .about-text .memory-photo { margin-top:var(--space-6); }
+.about-columns .memory-who { --memory-rotation:4deg;margin-left:auto;margin-right:clamp(.4rem,4vw,3.5rem);width:clamp(7rem,10vw,9rem); }
+.about-columns .memory-education { --memory-rotation:-4deg;margin-left:clamp(.5rem,6vw,5rem);width:clamp(7.5rem,10vw,9.5rem); }
+.about-columns .memory-experience-left { --memory-rotation:5deg;margin-left:clamp(1rem,7vw,5.5rem);width:clamp(7rem,10vw,9.25rem); }
+.about-columns .memory-experience-right { --memory-rotation:-3deg;margin-left:auto;margin-right:clamp(.5rem,5vw,3.5rem);width:clamp(7.5rem,10vw,9.5rem); }
+.about-columns .memory-skills { --memory-rotation:4deg;margin-left:clamp(1rem,8vw,6rem);width:clamp(7.5rem,11vw,10rem); }
+@media(max-width:699px) {
+ .about-hero-memory {height:9.75rem;margin-top:var(--space-6)}
+ .memory-photo {width:clamp(5.75rem,27vw,7.5rem)}
+ .about-hero-memory .memory-hero {left:4%;width:clamp(6.25rem,28vw,8.25rem)}
+ .about-columns .about-side {display:flex;align-items:flex-start;justify-content:space-between;column-gap:var(--space-4);flex-wrap:wrap}
+ .about-columns .about-side .kicker {flex-basis:100%}
+ .about-columns .about-side h2 {flex:1 1 45%;min-width:0}
+ .about-columns .about-side .memory-photo {flex:0 0 auto;margin:var(--space-4) clamp(.3rem,3vw,1rem) var(--space-3) 0;width:clamp(5.6rem,25vw,7rem)}
+ .about-columns .about-text .memory-photo {width:clamp(5.75rem,27vw,7.5rem);margin-top:var(--space-4)}
+ .about-columns .memory-who {margin-left:auto;margin-right:clamp(.5rem,5vw,1.5rem)}
+ .about-columns .memory-experience-right {margin-left:auto;margin-right:clamp(.5rem,6vw,2rem)}
+ .about-columns .memory-education,.about-columns .memory-skills,.about-columns .memory-experience-left {margin-left:0}
+}
+@media(max-width:360px){.about-columns .about-side h2 {flex-basis:48%}.about-columns .about-side .memory-photo {width:5.5rem}}
