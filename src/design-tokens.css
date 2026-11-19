@@ -603,3 +603,49 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
  #aboutPage .about-columns .about-side .memory-photo { margin-top:.5rem; }
  #aboutPage .about-columns .about-text .memory-photo { margin-top:.625rem; }
 }
+
+/* v2.2 — editorial placement corrections + distinct brand palette pins. */
+#aboutPage .memory-who {
+  margin-left:clamp(.8rem,4vw,3rem);
+  margin-right:auto;
+  --memory-rotation:-4deg;
+}
+#aboutPage .skills-memory-position {
+  display:flex;
+  justify-content:flex-end;
+  padding-right:clamp(.5rem,5vw,3rem);
+  margin:clamp(.75rem,2vw,1.25rem) 0 clamp(1rem,2vw,1.5rem);
+}
+#aboutPage .skills-memory-position .memory-skills {
+  --memory-rotation:5deg;
+  margin:0;
+  width:clamp(7rem,10vw,9rem);
+}
+/* Colored metal/brad heads; distinct from cream paper and each photograph. */
+#aboutPage .memory-photo.memory-pin::before {
+  box-sizing:border-box;
+  border:1px solid var(--pin-edge,#314c48);
+  background:radial-gradient(circle at 32% 25%,rgba(255,255,255,.7) 0 11%,transparent 37%),var(--pin-color,#668a7b);
+  box-shadow:0 1.5px 3px rgba(32,37,30,.3), inset 0 -1.5px 1px rgba(0,0,0,.15);
+}
+#aboutPage .memory-hero { --pin-color:#8b4f5e;--pin-edge:#643344; }
+#aboutPage .memory-who { --pin-color:#5e7890;--pin-edge:#354b60; }
+#aboutPage .memory-education { --pin-color:#71884a;--pin-edge:#48592c; }
+#aboutPage .memory-experience-left { --pin-color:#b37848;--pin-edge:#795031; }
+#aboutPage .memory-skills { --pin-color:#8c6e9d;--pin-edge:#594268; }
+@media(max-width:699px) {
+  #aboutPage .about-columns .about-text .memory-who {
+    margin-left:clamp(.5rem,5vw,1.5rem);
+    margin-right:auto;
+    margin-top:.75rem;
+  }
+  #aboutPage .skills-memory-position {
+    justify-content:flex-end;
+    padding-right:clamp(.75rem,5vw,1.5rem);
+    margin:.25rem 0 1rem;
+  }
+  #aboutPage .skills-memory-position .memory-skills {
+    margin:0;
+    width:clamp(5.75rem,26vw,7.5rem);
+  }
+}
