@@ -467,3 +467,26 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
     text-align:center;
   }
 }
+
+/* v1.8 — About Me: personal photo gallery, responsive editorial layout */
+.about-gallery {
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ grid-auto-flow:row dense;
+ gap:clamp(.5rem,1.4vw,1rem);
+ margin-top:clamp(2rem,4vw,3.5rem);
+}
+.about-gallery .about-photo {
+ min-width:0; min-height:0; margin:0;
+ border:1.5px solid var(--ink); border-radius:clamp(.75rem,1.3vw,1.125rem);
+ overflow:hidden; aspect-ratio:3/4; background:#e3e2d8;
+}
+.about-gallery .about-photo-feature { grid-column:span 2; grid-row:span 2; aspect-ratio:auto; }
+.about-gallery .about-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+.about-gallery .about-photo-feature img { object-position:center 38%; }
+.about-gallery .about-photo[hidden] { display:none; }
+@media(max-width:699px) {
+ .about-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-3); }
+ .about-gallery .about-photo-feature { grid-column:span 2; grid-row:span 1; aspect-ratio:4/3; }
+ .about-gallery .about-photo-feature img { object-position:center 42%; }
+}
