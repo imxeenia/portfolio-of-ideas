@@ -520,3 +520,42 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
  .about-columns .memory-education,.about-columns .memory-skills,.about-columns .memory-experience-left {margin-left:0}
 }
 @media(max-width:360px){.about-columns .about-side h2 {flex-basis:48%}.about-columns .about-side .memory-photo {width:5.5rem}}
+
+/* v2.0 — mixed washi tape / brass pin and compact About Me rhythm. */
+#aboutPage .memory-photo { isolation:isolate; }
+#aboutPage .memory-tape::before {
+  content:""; position:absolute; z-index:3; pointer-events:none;
+  width:48%; height:clamp(.75rem,1.4vw,1.05rem);
+  background:rgba(213,206,176,.79);
+  border-left:1px solid rgba(120,115,90,.15);
+  border-right:1px solid rgba(120,115,90,.15);
+  box-shadow:0 1px 3px rgba(40,42,35,.12);
+  left:26%; top:-.32rem; transform:rotate(-7deg);
+}
+#aboutPage .memory-experience-left.memory-tape::before { transform:rotate(8deg); background:rgba(202,213,190,.8); }
+#aboutPage .memory-pin::before {
+  content:""; position:absolute; z-index:4; pointer-events:none;
+  width:clamp(.55rem,1.1vw,.7rem); aspect-ratio:1;
+  border-radius:50%; top:-.29rem; left:calc(50% - .35rem);
+  background:radial-gradient(circle at 34% 30%,#f9edca 0 18%,#c5a16e 38%,#92714b 75%,#785d3f 100%);
+  border:1px solid #806847; box-shadow:0 2px 4px rgba(34,32,22,.25);
+}
+#aboutPage .memory-pin::after {
+  content:""; position:absolute; z-index:0; pointer-events:none;
+  top:0; left:50%; width:1px; height:13px; transform:translateX(-50%);
+  background:rgba(37,33,21,.24);
+}
+#aboutPage .about-page-head { padding-top:clamp(2.5rem,4vw,4rem); padding-bottom:clamp(1.5rem,3vw,2.5rem); }
+#aboutPage .about-hero-memory { height:clamp(8.5rem,12vw,10rem); margin-top:var(--space-4); }
+#aboutPage .about-columns { padding-block:clamp(2rem,3.4vw,3.25rem); gap:clamp(1.25rem,3vw,2.5rem); }
+#aboutPage .about-action { padding-top:var(--space-8); }
+@media(max-width:699px) {
+  #aboutPage .about-page-head { padding-top:2.5rem; padding-bottom:1.375rem; }
+  #aboutPage .about-page-head h1 { margin-block:1.5rem; }
+  #aboutPage .about-hero-memory { height:8.5rem; margin-top:.625rem; }
+  #aboutPage .about-hero-memory .memory-hero { width:clamp(5.9rem,25vw,7rem); left:auto; right:clamp(.5rem,8vw,2rem); }
+  #aboutPage .about-columns { padding-block:clamp(1.75rem,7vw,2.25rem); gap:1.25rem; }
+  #aboutPage .about-columns .about-side .memory-photo { margin-top:.5rem; margin-bottom:.25rem; }
+  #aboutPage .about-columns .about-text .memory-photo { margin-top:.75rem; }
+  #aboutPage .about-action { padding:1.75rem 0 3rem; }
+}
