@@ -1,14 +1,14 @@
-# About Me photos
+# About Me photo assets
 
-Place the six approved WebP files in this directory:
+The original photos were uploaded by the owner. The published gallery references these exact six JPEGs:
 
-- `portrait-closeup.webp`
-- `portrait-forest.webp`
-- `portrait-cafe.webp`
-- `portrait-meadow.webp`
-- `portrait-sunset.webp`
-- `travel-mountains.webp`
+- `IMG_7926.jpeg` — featured portrait
+- `IMG_4252.jpeg` — forest
+- `IMG_3759.jpeg` — outdoor café
+- `IMG_7881.jpeg` — meadow
+- `IMG_3072.jpeg` — sunset portrait
+- `IMG_9922.jpeg` — mountain trip
 
-They are referenced by `index.html`. Upload the optimized originals from the provided photo package; do not upload the ZIP itself, as GitHub Pages won't unpack it.
+Four other JPEGs were uploaded but are currently not included in the published gallery. Older WebP paths were preliminary placeholders and are no longer referenced in `index.html`.
 
-**Privacy:** this repository and published GitHub Pages are public; photos can be viewed and downloaded by anyone.
+**Public repository:** Images can be viewed and downloaded by any visitor. The large JPEG sizes may affect mobile performance; non-destructive optimization is an optional follow-up.
