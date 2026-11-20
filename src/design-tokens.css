@@ -740,3 +740,23 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
 
 /* v2.6 — all project cover kicker labels use legible graphite on white. */
 .visual .tag { color: var(--ink, #20251e); }
+
+/* v2.7 — unified back navigation: brand graphite with restrained olive interaction. */
+#detail .back,
+#detail #backTop {
+  appearance:none;
+  -webkit-appearance:none;
+  color:var(--ink,#20251e);
+  background:transparent;
+  font:700 clamp(.8125rem,2.4vw,.9375rem)/1.4 var(--font-ui,'Manrope',sans-serif);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:color .2s ease;
+}
+#detail .back:hover,
+#detail .back:focus-visible,
+#detail #backTop:hover,
+#detail #backTop:focus-visible { color:#718a35; }
+#detail #backTop:focus-visible { outline:2px solid #718a35;outline-offset:5px;border-radius:2px; }
+@media(prefers-reduced-motion:reduce){#detail .back,#detail #backTop{transition:none}}
