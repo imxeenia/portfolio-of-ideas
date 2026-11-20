@@ -731,3 +731,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
   .site-drawer .drawer-brand {font-size:1.12rem;}
   .site-drawer .drawer-links a {font-size:.875rem;}
 }
+
+/* v2.5 — stable monochrome SVG arrow pictograms (no platform emoji). */
+.arrow-icon { display:block; width:1em; height:1em; flex:none; }
+.button-arrow { display:inline-flex;align-items:center;justify-content:center; flex:none;font-size:1.2em; }
+.button .button-arrow { margin-left:.1em; }
+.arr .arrow-icon {width:55%;height:55%;}
