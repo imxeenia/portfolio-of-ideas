@@ -737,3 +737,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
 .button-arrow { display:inline-flex;align-items:center;justify-content:center; flex:none;font-size:1.2em; }
 .button .button-arrow { margin-left:.1em; }
 .arr .arrow-icon {width:55%;height:55%;}
+
+/* v2.6 — all project cover kicker labels use legible graphite on white. */
+.visual .tag { color: var(--ink, #20251e); }
