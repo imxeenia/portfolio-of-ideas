@@ -705,3 +705,29 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
   #aboutPage .about-flow-text .memory-who { width:5.5rem; margin-right:.8rem; }
   #aboutPage .skills-flow .memory-skills { width:5.5rem; margin-left:.75rem; }
 }
+
+/* v2.4 — mobile drawer type hierarchy: stronger wordmark, quieter navigation. */
+@media (max-width:800px) {
+  .site-drawer .drawer-head {
+    grid-template-columns:minmax(0,1fr) minmax(0,auto) minmax(0,1fr);
+  }
+  .site-drawer .drawer-brand {
+    font-size:clamp(1.2rem,5.1vw,1.55rem);
+    font-weight:800;
+    letter-spacing:-.075em;
+    line-height:1.15;
+    white-space:nowrap;
+  }
+  .site-drawer .drawer-links a {
+    font-size:clamp(.875rem,3.5vw,1.0625rem);
+    font-weight:700;
+    letter-spacing:.045em;
+    line-height:1.35;
+    padding:clamp(.9rem,3.5vw,1.125rem) 0;
+  }
+  .site-drawer .drawer-links {padding-top:clamp(1rem,3.5vw,1.4rem);}
+}
+@media (max-width:360px) {
+  .site-drawer .drawer-brand {font-size:1.12rem;}
+  .site-drawer .drawer-links a {font-size:.875rem;}
+}
