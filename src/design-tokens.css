@@ -835,3 +835,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
  #aboutPage .about-action {padding:var(--space-8) 0 var(--space-12);}
  .footer h2 {margin:var(--space-6) 0 var(--space-12);}
 }
+
+/* v3.1 — desktop hero: semantic 32px gap between intro copy and CTA.
+   See docs/TYPOGRAPHY_SPACING.md §4: --space-8 between content groups.
+   The legacy flex space-between is not a minimum distance. */
+@media (min-width:1024px) {
+  #home .hero-copy > .button {
+    margin-top:var(--space-8);
+  }
+}
