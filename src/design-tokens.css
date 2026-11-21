@@ -861,3 +861,74 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
   text-align:center;
   line-height:1.35;
 }
+
+/* v3.3 — desktop About Me editorial composition.
+   Preserve previously approved mobile wrapping and compact spacing.
+   The previous 100%-height images could collapse to a shallow strip on desktop:
+   an intrinsic-ratio img now determines the Polaroid's content height. */
+#aboutPage .memory-photo {
+  aspect-ratio:auto;
+  height:auto;
+  overflow:visible;
+}
+#aboutPage .memory-photo img {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1 / 1.13;
+  object-fit:cover;
+  object-position:center;
+}
+/* Different rotations on purpose: alternating and optically balanced. */
+#aboutPage .memory-hero { --memory-rotation:-6deg; }
+#aboutPage .memory-who { --memory-rotation:5deg; }
+#aboutPage .memory-education { --memory-rotation:3deg; }
+#aboutPage .memory-experience-left { --memory-rotation:-4deg; }
+#aboutPage .memory-skills { --memory-rotation:6deg; }
+@media (min-width:1024px) {
+  #aboutPage .about-columns {
+    grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+    column-gap:var(--space-12);
+    align-items:start;
+    padding-block:var(--space-12);
+  }
+  #aboutPage .about-side h2 { margin-top:var(--space-3); }
+  #aboutPage .about-columns .about-side .memory-hero {
+    margin:var(--space-6) 0 0 clamp(1.5rem,5vw,4rem);
+    width:clamp(8rem,10vw,9.5rem);
+  }
+  #aboutPage .about-columns .about-side .memory-education {
+    margin:var(--space-6) 0 0 clamp(.75rem,3vw,2.5rem);
+    width:clamp(7.5rem,9vw,9rem);
+  }
+  #aboutPage .about-columns .about-side .memory-experience-left {
+    margin:var(--space-6) 0 0 clamp(3rem,8vw,8rem);
+    width:clamp(7.5rem,9vw,9rem);
+  }
+  #aboutPage .about-flow-text .memory-who,
+  #aboutPage .about-columns .about-text .memory-who {
+    float:right;
+    clear:none;
+    width:clamp(7rem,9vw,8.25rem);
+    margin:var(--space-3) clamp(.5rem,1.5vw,1rem) var(--space-4) var(--space-6);
+    --memory-rotation:5deg;
+  }
+  #aboutPage .skills-flow .memory-skills,
+  #aboutPage .about-columns .about-text .skills-flow .memory-skills {
+    width:clamp(7rem,9vw,8.5rem);
+    margin:var(--space-3) var(--space-3) var(--space-4) var(--space-6);
+    --memory-rotation:6deg;
+  }
+  #aboutPage .about-text p:last-child { margin-bottom:0; }
+  #aboutPage .about-text .timeline-item:last-of-type { margin-bottom:var(--space-4); }
+}
+/* Small screens keep the approved side-by-side intro and text wrapping. */
+@media (max-width:1023px) {
+  #aboutPage .about-columns .about-text .memory-who {
+    --memory-rotation:5deg;
+  }
+  #aboutPage .about-columns .memory-hero { --memory-rotation:-6deg; }
+  #aboutPage .about-columns .memory-education { --memory-rotation:3deg; }
+  #aboutPage .about-columns .memory-experience-left { --memory-rotation:-4deg; }
+  #aboutPage .about-columns .memory-skills { --memory-rotation:6deg; }
+}
