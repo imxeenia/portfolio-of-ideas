@@ -778,3 +778,32 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
     gap: var(--space-6);
   }
 }
+
+/* v2.9 — spacing harmonization for the six shared project case pages.
+   Approved scale: 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96px. */
+#detail .detail-return { padding-top:var(--space-8); }
+#detail .detail-hero { padding-top:var(--space-12); }
+#detail .detail-hero h1 { margin:var(--space-3) 0 var(--space-4); }
+#detail .detail-hero .meta { padding:var(--space-4) 0; gap:var(--space-3); }
+#detail .detail-hero > div:last-child > .meta:first-child { border-top:0; }
+#detail .detail-banner { margin:var(--space-12) 0 var(--space-16); }
+#detail .content-grid h2 { margin-bottom:var(--space-4); }
+#detail .content-grid p { margin-bottom:var(--space-4); }
+#detail .details-grid { gap:var(--space-3); margin:var(--space-8) 0; }
+#detail .fact span { margin-bottom:var(--space-6); }
+#detail .moodboard { gap:var(--space-4); margin-top:var(--space-8); }
+#detail .moodboard-note { margin-top:var(--space-4); }
+#detail .step .num { margin-bottom:var(--space-8); }
+#detail .quote { padding:var(--space-16) var(--space-12); }
+#detail .detail-end-action { padding:var(--space-12) 0 var(--space-24); }
+@media(max-width:1023px) {
+ #detail .detail-banner {margin:var(--space-12) 0 var(--space-16);}
+ #detail .quote {padding:var(--space-12) var(--space-8);}
+}
+@media(max-width:619px) {
+ #detail .detail-return {padding-top:var(--space-6);}
+ #detail .detail-hero {padding-top:var(--space-8);gap:var(--space-6);}
+ #detail .detail-banner {margin:var(--space-12) 0;}
+ #detail .quote {padding:var(--space-8) var(--space-6);}
+ #detail .detail-end-action {padding:var(--space-12) 0 var(--space-16);}
+}
