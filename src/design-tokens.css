@@ -807,3 +807,31 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
  #detail .quote {padding:var(--space-8) var(--space-6);}
  #detail .detail-end-action {padding:var(--space-12) 0 var(--space-16);}
 }
+
+/* v3.0 — shared rhythm cleanup; keep the approved compact About Me collage. */
+#home .section-top h2 { margin-top:var(--space-2); }
+#home .about .bigcopy { margin:var(--space-6) 0; }
+#home .about .skills { margin-top:var(--space-8); gap:var(--space-3); }
+#home .about .chip { padding:var(--space-3) var(--space-4); }
+#home .little-card h3 { margin:var(--space-4) 0 var(--space-1); }
+#aboutPage .about-page-head h1 { margin-block:var(--space-6); }
+#aboutPage .about-side h2 { margin-top:var(--space-3); }
+#aboutPage .about-text p { margin-bottom:var(--space-4); }
+#aboutPage .about-text .timeline-item { margin-bottom:var(--space-8); }
+#aboutPage .about-text .timeline-item p { margin-top:var(--space-4); }
+#aboutPage .about-text .skills { margin-bottom:var(--space-8); }
+#aboutPage .about-action { padding:var(--space-8) 0 var(--space-12); }
+/* The polaroid positioning and 24px mobile section spacing stay deliberately compact. */
+.footer { padding:var(--space-12) 0 var(--space-6); }
+.footer h2 { margin:var(--space-6) 0 var(--space-12); }
+.footer-row { gap:var(--space-4);padding-top:var(--space-6); }
+@media (max-width:699px) {
+ #home .little-card {gap:var(--space-4);}
+ /* Smaller cover in a horizontal mini-card: 12px is a documented compact exception. */
+ #home .little-art {padding:var(--space-3);}
+ #aboutPage .about-page-head h1 {margin-block:var(--space-6);}
+ #aboutPage .about-columns {gap:var(--space-4);padding-block:var(--space-6);}
+ #aboutPage .about-side h2 {margin-top:var(--space-3);}
+ #aboutPage .about-action {padding:var(--space-8) 0 var(--space-12);}
+ .footer h2 {margin:var(--space-6) 0 var(--space-12);}
+}
