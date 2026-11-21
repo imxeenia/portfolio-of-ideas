@@ -844,3 +844,20 @@ a:focus-visible, button:focus-visible { outline: 3px solid #5877AD; outline-offs
     margin-top:var(--space-8);
   }
 }
+
+/* v3.2 — the MADE WITH LOVE stamp must be a true circle at every viewport.
+   Legacy padding-only sizing distorted the ellipse with three text lines. */
+#home .hero-art .stamp {
+  box-sizing:border-box;
+  width:clamp(4.5rem,6vw,6rem);
+  aspect-ratio:1 / 1;
+  height:auto;
+  padding:0;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  line-height:1.35;
+}
